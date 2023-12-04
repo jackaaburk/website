@@ -39,11 +39,14 @@
     window.onload = init;
   </script>
 <script>
+function johnpopup() {
 let john = 10
+    if(john < 100) {
     alert("The Johnson is at: " + john + "%");
-while(john < 100) {
-    alert("The Johnson is at: " + john + "%");
-    john += 10
+    john += 10 }
+    if(john >= 100) {
+	alert("The Johnson has been fully charged);
+	}
 }
 </script>
 </head>
@@ -55,6 +58,7 @@ while(john < 100) {
   <main id="song">
 
   </main>
+<button onclick="johnpopup()"> Press me to charge LeJohnson </button>
  <p>
  <ul>
 <li> To declare a variable in Javascript, use "var" and then the name of the variable after it along with what it will be assigned to, ex. var cheese = "cake". </li>
