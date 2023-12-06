@@ -38,6 +38,7 @@
 
     window.onload = init;
   </script>
+
 </head>
 
 <body>
@@ -46,7 +47,18 @@
   </header>
   <main id="song">
   </main>
-<button onclick="johnpopup()"> Press me to charge LeJohnson </button>
+  <button onclick="johnpopup()"> Press me to charge LeJohnson </button>
+  <script>
+    let john = 10
+    function johnpopup() {
+        if(john < 100) {
+        alert("The Johnson is at: " + john + "%");
+        john += 10 }
+        if(john >= 100) {
+      alert("The Johnson has been fully charged");
+    }
+    }
+    </script>
  <p>
  <ul>
 <li> To declare a variable in Javascript, use "var" and then the name of the variable after it along with what it will be assigned to, ex. var cheese = "cake". </li>
@@ -59,17 +71,7 @@
     <a id="vLink2"><strong> CSS </strong> Valid! </a>
   </footer>
 
-<script>
-function johnpopup() {
-let john = 10
-    if(john < 100) {
-    alert("The Johnson is at: " + john + "%");
-    john += 10 }
-    if(john >= 100) {
-	alert("The Johnson has been fully charged);
-	}
-}
-</script>
+
 
 
   <script>
