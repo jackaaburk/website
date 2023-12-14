@@ -1,23 +1,17 @@
-function setUpButtonHandler() {
-    let button = document.getElementById("addButton");
+window.onload = init;
+function init() {
+    var button = document.getElementById("addButton"); 
     button.onclick = handleButtonClick;
+    loadPlaylist();
 }
 
-
 function handleButtonClick() {
-    let textInput = document.getElementById("songTextInput");
-    let songName = textInput.value;
-    if (songName == "") {
-        alert("Please enter a song!");
-    }
-    else {
-       console.log("Adding " + songName);
-        let li = document.createElement("li");
-		li.innerHTML = songName;
-		let ul = document.getElementById("playlist");
-		ul.appendChild(li);
-	      ul.style.backgroundColor = "crimson";
-	      ul.style.color = "black";
-	    save(songName);
-    }
+    var textInput = document.getElementById("songTextInput");
+    var songName = textInput.value;
+    var li = document.createElement("li"); 
+    li.innerHTML = songName;
+    var ul = document.getElementById("playlist"); 
+    ul.appendChild(li);
+    save(songName);
+
 }
