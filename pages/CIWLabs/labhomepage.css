@@ -1,0 +1,12 @@
+body {
+    text-align: left;
+    color: lime;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: black;
+}
+
+title { 
+    color: lime;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique;
+}
