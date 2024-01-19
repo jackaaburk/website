@@ -3,6 +3,7 @@ body {
     color: lime;
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: black;
+    background-image: url('matrix.gif');
 }
 
 title { 
@@ -28,4 +29,6 @@ a:link {
     background-color: transparent;
     text-decoration: underline;
   }
+
+
   
