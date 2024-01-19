@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>CIW Personal Lab 2</title>
+    <title>CIW Lab 6.1</title>
     <link rel="stylesheet" href="../CIWLabs/LabStyles/personallab2.css">
 </head>
 <body> 
@@ -12,14 +12,24 @@
         var outputElement = document.getElementById('output');
 
         for (var i = 1; i <= 31; i++) {
-            var eventForm = '<form>Event</form>';
-            var timeForm = '<form>Time</form>';
+            var eventForm = '<form>Event: <input type="text"></form>';
+            var timeForm = '<form>Time: <input type="text"></form>';
 
             outputElement.innerHTML += '<p>Day ' + i + '</p>';
             outputElement.innerHTML += eventForm + timeForm;
             outputElement.innerHTML += '<hr>';
         }
+
+        outputElement.innerHTML += '<button onclick="resetForms()">Reset</button>';
+
+        function resetForms() {
+            var forms = document.querySelectorAll('form');
+            forms.forEach(function(form) {
+                form.reset();
+            });
+        }
     </script>
+
     <nav>
       | <a href="index.html"> Home </a>|
     </nav>
