@@ -2,23 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>CIW Lab 6.1</title>
-    <link rel="Stylesheet" href="../CIWLabs/LabStyles/personallab2.css">
-  </head>
+    <title>CIW Personal Lab 2</title>
+    <link rel="stylesheet" href="../CIWLabs/LabStyles/personallab2.css">
+</head>
 <body> 
     <h1> Calendar </h1> 
-<script>
-    for (i in range(1, 32)) {
-        let event = <form>Event </form>;
-        let time = <form>Time </form>;
+    <div id="output"></div>
+    <script>
+        var outputElement = document.getElementById('output');
 
-        print("Day" + str(i))
-        outputElement.innerHTML += event; time;
-        i += 1 
-        <hr>
+        for (var i = 1; i <= 31; i++) {
+            var eventForm = '<form>Event</form>';
+            var timeForm = '<form>Time</form>';
 
-    }
-</script>
+            outputElement.innerHTML += '<p>Day ' + i + '</p>';
+            outputElement.innerHTML += eventForm + timeForm;
+            outputElement.innerHTML += '<hr>';
+        }
+    </script>
     <nav>
       | <a href="index.html"> Home </a>|
     </nav>
