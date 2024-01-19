@@ -12,35 +12,42 @@
         var outputElement = document.getElementById('output');
 
         for (var i = 1; i <= 31; i++) {
-            var eventForm = '<form>Event: <input type="text" onchange="updateContent(this.value, ' + i + ', \'event\')"></form>';
-            var timeForm = '<form>Time: <input type="text" onchange="updateContent(this.value, ' + i + ', \'time\')"></form>';
-            var contentDiv = '<div id="content' + i + '"></div>';
+            var eventForm = '<form>Event: <input type="text" id="event' + i + '" onblur="updateContent(' + i + ', \'event\')"></form>';
+            var timeForm = '<form>Time: <input type="text" id="time' + i + '" onblur="updateContent(' + i + ', \'time\')"></form>';
+            var contentDiv = '<div id="content' + i + '">' + getStoredContent(i) + '</div>';
+            var removeButton = '<button onclick="removeContent(' + i + ')">Remove</button>';
 
             outputElement.innerHTML += '<p>Day ' + i + '</p>';
             outputElement.innerHTML += eventForm;
             outputElement.innerHTML += timeForm;
             outputElement.innerHTML += contentDiv;
+            outputElement.innerHTML += removeButton;
             outputElement.innerHTML += '<hr>';
         }
 
-        outputElement.innerHTML += '<button onclick="resetForms()">Reset</button>';
-
-        function updateContent(value, day, type) {
+        function updateContent(day, type) {
+            var eventInput = document.getElementById('event' + day);
+            var timeInput = document.getElementById('time' + day);
             var contentDiv = document.getElementById('content' + day);
-            contentDiv.innerHTML = type + ': ' + value;
+
+            var eventValue = eventInput.value;
+            var timeValue = timeInput.value || 'Not specified';
+
+            var content = eventValue + ': ' + timeValue;
+            contentDiv.innerHTML = content;
+
+            localStorage.setItem('content' + day, content);
         }
 
-        function resetForms() {
-            var forms = document.querySelectorAll('form');
-            var contentDivs = document.querySelectorAll('[id^="content"]');
-            
-            forms.forEach(function(form) {
-                form.reset();
-            });
+        function getStoredContent(day) {
+            return localStorage.getItem('content' + day) || '';
+        }
 
-            contentDivs.forEach(function(div) {
-                div.innerHTML = '';
-            });
+        function removeContent(day) {
+            var contentDiv = document.getElementById('content' + day);
+            contentDiv.innerHTML = '';
+
+            localStorage.removeItem('content' + day);
         }
     </script>
 
