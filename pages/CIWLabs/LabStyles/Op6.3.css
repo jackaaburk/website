@@ -6,6 +6,10 @@ body {
   background-image: url('matrix.gif');
 }
 
+matrix.gif { 
+  opacity: .3;
+}
+
 title { 
   color: lime;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -29,6 +33,10 @@ a:hover {
   background-color: transparent;
   text-decoration: underline;
 }
+
+
+
+  
 
 
 
