@@ -42,6 +42,7 @@ h2 {
     text-transform: uppercase;
     cursor: pointer;
     font-weight: 600;
+    align-items: center;
 }
 
 .reset:focus { 
@@ -50,11 +51,46 @@ h2 {
 }
 
 .game {
-    width: 440px;
-    height: 440px;
+    width: 430px;
+    height: 430px;
     display: flex;
      flex-wrap: wrap;
      gap: 10px;
      transform-style: preserve-3d;
      perspective: 500px;
+}
+
+.item { 
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    background: #fff;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+
+}
+
+.item.boxOpen {
+    transform: rotateY(0deg);
+}
+
+.item::after { 
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #209d7b;
+    opacity: 0.85; 
+    transition: 0.25;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.boxOpen:after
+.boxMatch::after
+{
+    transform: rotateY(180deg);
 }
