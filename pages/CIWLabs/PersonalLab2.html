@@ -12,21 +12,34 @@
         var outputElement = document.getElementById('output');
 
         for (var i = 1; i <= 31; i++) {
-            var eventForm = '<form>Event: <input type="text"></form>';
-            var timeForm = '<form>Time: <input type="text"></form>';
+            var eventForm = '<form>Event: <input type="text" onchange="updateContent(this.value, ' + i + ', \'event\')"></form>';
+            var timeForm = '<form>Time: <input type="text" onchange="updateContent(this.value, ' + i + ', \'time\')"></form>';
+            var contentDiv = '<div id="content' + i + '"></div>';
 
             outputElement.innerHTML += '<p>Day ' + i + '</p>';
             outputElement.innerHTML += eventForm;
             outputElement.innerHTML += timeForm;
+            outputElement.innerHTML += contentDiv;
             outputElement.innerHTML += '<hr>';
         }
 
         outputElement.innerHTML += '<button onclick="resetForms()">Reset</button>';
 
+        function updateContent(value, day, type) {
+            var contentDiv = document.getElementById('content' + day);
+            contentDiv.innerHTML = type + ': ' + value;
+        }
+
         function resetForms() {
             var forms = document.querySelectorAll('form');
+            var contentDivs = document.querySelectorAll('[id^="content"]');
+            
             forms.forEach(function(form) {
                 form.reset();
+            });
+
+            contentDivs.forEach(function(div) {
+                div.innerHTML = '';
             });
         }
     </script>
