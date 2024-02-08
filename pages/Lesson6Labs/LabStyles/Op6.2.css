@@ -1,0 +1,40 @@
+body {
+  text-align: left;
+  color: lime;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: black;
+  background-image: url('matrix.gif');
+}
+
+matrix.gif { 
+  opacity: .3;
+}
+
+title { 
+  color: lime;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: oblique;
+}
+
+a:link {
+  color: lime;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: forestgreen;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+
+
+  
+  
