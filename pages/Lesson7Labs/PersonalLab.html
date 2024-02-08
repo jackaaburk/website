@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="LabStyles/7.2.css">
+        <script>
+            function calculateMidpoint() {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        var userLat = position.coords.latitude;
+                        var userLng = position.coords.longitude;
+                        var inputLat = parseFloat(document.getElementById("inputLat").value);
+                        var inputLng = parseFloat(document.getElementById("inputLng").value);
+            
+                        var midpointLat = (userLat + inputLat) / 2;
+                        var midpointLng = (userLng + inputLng) / 2;
+            
+                        document.getElementById("midpoint").innerText = "Midpoint Coordinates: (" + midpointLat + ", " + midpointLng + ")";
+                    });
+                }
+            </script>
+    </head>
+    <body>
+        <h1>Midpoint Calculator</h1>
+        <p>Enter coordinates and click the button to find the midpoint between them and your current location.</p>
+        <label for="inputLat">Latitude:</label>
+        <input type="text" id="inputLat" placeholder="Enter Latitude"><br>
+        <label for="inputLng">Longitude:</label>
+        <input type="text" id="inputLng" placeholder="Enter Longitude"><br>
+        <button onclick="calculateMidpoint()">Calculate Midpoint</button>
+        </body>
+</html>
