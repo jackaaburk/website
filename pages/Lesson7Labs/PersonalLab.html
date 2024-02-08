@@ -14,7 +14,9 @@
                         var midpointLng = (userLng + inputLng) / 2;
             
                         document.getElementById("midpoint").innerText = "Midpoint Coordinates: (" + midpointLat + ", " + midpointLng + ")";
+                        alert(midpoint);
                     });
+
                 }
             </script>
     </head>
@@ -26,5 +28,6 @@
         <label for="inputLng">Longitude:</label>
         <input type="text" id="inputLng" placeholder="Enter Longitude"><br>
         <button onclick="calculateMidpoint()">Calculate Midpoint</button>
+        <p id="midpoint"></p>
         </body>
 </html>
