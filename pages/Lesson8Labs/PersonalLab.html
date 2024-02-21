@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="LabStyles/PersonalLab.css">
+<meta charset="UTF-8">
+<title>Number Guessing Game</title>
+
+</head>
+<body>
+    <h1>Number Guessing Game</h1>
+    <label for="userNumber">Choose a number between 1 and 100:</label>
+    <input type="range" id="userNumber" name="userNumber" min="1" max="100" value="50">
+    <br>
+    <button onclick="checkResult()">Check Result</button>
+    <p id="result"></p>
+
+    <script>
+        function checkResult() {
+            var userNumber = parseInt(document.getElementById("userNumber").value);
+            var randomNumber = Math.floor(Math.random() * 100) + 1;
+            var resultMessage = "";
+
+            if (randomNumber <= userNumber) {
+                resultMessage = "Congratulations! You win! The random number was " + randomNumber + ".";
+            } else {
+                resultMessage = "Sorry, you lose! The random number was " + randomNumber + ".";
+            }
+
+            document.getElementById("result").textContent = resultMessage;
+        }
+    </script>
+</body>
+</html>
