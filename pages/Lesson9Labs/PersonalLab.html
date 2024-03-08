@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="LabStyles/OpLab9.1.css" />
+    <title>Optional Lab 9.1</title>
+</head>
+<body>
+    
+<section>
+
+<article>
+
+    <h1>Registration Form</h1>
+    <p>
+        <label for="tit">Title: </label>
+        <input list="titles" name="title" id="tit" />
+        <datalist id="titles">
+            <option value="Mr."> </option>
+            <option value="Mrs."> </option>
+            <option value="Ms."> </option>
+        </datalist>
+    </p>
+    <p>
+        <label for="first">First name: </label>
+        <input autofocus required type="text" name="firstname" id="first" />
+    </p>
+    <p>
+        <label for="last">Last name: </label>
+        <input required type="text" name="lastname" id="last" />
+    </p>
+    <p>
+        <label for="db">Date of Birth: </label>
+        <input type="date" name="dob" id="db" />
+    </p>
+    <p>
+        <label for="skill">Best Technical Skill: </label>
+    </p>
+    <p>
+        <textarea name="bestskill" placeholder="Database" maxlength="9" id="skill"></textarea>
+    </p>
+</fieldset>
+
+<fieldset name="other-information">
+    <legend>Other Information:</legend>
+    <p>
+        <label for="tech">How many technologies do you know?: 0 </label>
+        <input type="range" name="technologies" min="0" max="50" value="25" id="tech" /> 10+
+    </p>
+    <p>
+        <label for="num">Age of user: </label>
+        <input type="number" name="age" min="1" max="100" id="num" />
+    </p>
+    <p>
+        <label for="desiredAge">Desired Age: </label>
+        <input type="number" name="desiredAge" min="1" max="100" id="desiredAge" />
+    </p>
+    <button type="button" onclick="calculateYears()">Calculate Years</button>
+    <div id="yearsToReach"></div>
+</fieldset>
+
+</form>
+</article>
+
+</section>
+
+<script>
+    function calculateYears() {
+        var currentAge = document.getElementById("num").value;
+        var desiredAge = document.getElementById("desiredAge").value;
+
+        if (currentAge < 0 || desiredAge < 0) {
+            alert("Please enter valid ages.");
+            return;
+        }
+
+        if (desiredAge <= currentAge) {
+            alert("You have already reached or exceeded your desired age.");
+            return;
+        }
+
+        var yearsRemaining = desiredAge - currentAge;
+        document.getElementById("yearsToReach").innerHTML = "It will take " + yearsRemaining + " years to reach your desired age.";
+    }
+</script>
+
+</body>
+</html>
